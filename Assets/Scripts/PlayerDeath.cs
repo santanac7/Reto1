@@ -10,12 +10,8 @@ public class PlayerDeath : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    // bool _playerIsAlive = true;
-    // public bool PL {get => _playerIsAlive; set => _playerIsAlive = value;}
-
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Phantom")){
-            Debug.Log("you loose");
             _gameManager.PlayerDied();
         }
     }
