@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DotCollect : MonoBehaviour
+public class PointsCollect : MonoBehaviour
 {    
     [SerializeField] GameManager _gameManager;
     private int _points;
@@ -14,7 +14,7 @@ public class DotCollect : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Dot")){
             other.gameObject.SetActive(false);
-            _points ++;       
+            _points += 10;       
             AudioManager.intance.PlaySfx(0);
         }       
 
@@ -22,7 +22,7 @@ public class DotCollect : MonoBehaviour
         {
             //_cherryCollect = true;
             AudioManager.intance.PlaySfx(2);
-            _points += 15;
+            _points += 400;
             _cherryCollect = true;
         }
     }   

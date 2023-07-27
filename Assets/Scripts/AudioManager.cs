@@ -13,9 +13,10 @@ public class AudioManager : MonoBehaviour
     bool _sfxMute = false;
 
     // Audio Source List
-    public AudioSource _audioSource;
+    [SerializeField] AudioSource _audioSource;
     [SerializeField] List<AudioClip> _soundList = new List<AudioClip>();
 
+    public PlayerDeath _player;
 
 
     private void Awake() {
@@ -26,12 +27,7 @@ public class AudioManager : MonoBehaviour
         else {
             Destroy(gameObject);
         }
-        _audioSource = GetComponent<AudioSource>();
-        }
-
-        private void Start() {
-            //PlayMusicLoop();
-        }
+    }
 
     #region  Volume and mute Methods
     
@@ -84,21 +80,10 @@ public class AudioManager : MonoBehaviour
     public void PlaySfx(int _sfx){
         AudioClip clip = _soundList[_sfx];
         _audioSource.PlayOneShot(clip);
-    }  
-
-    public void PlayMusicLoop(){
-        _audioSource.Play();
-        _audioSource.loop = true;
-    }  
+    }     
     
     public void StopSfx(int _sfx){
         AudioClip clip = _soundList[_sfx];
         _audioSource.Stop();
-    }
-
-    public void StopMusicLoop(){
-        _audioSource.Stop();
-    }  
-
-    
+    }    
 }

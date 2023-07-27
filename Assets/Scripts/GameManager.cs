@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //public static GameManager instance;
-
     // Game Over Panel Variables
     public GameObject panelGameOver;    
+
+    [SerializeField] GameObject _player;
     [SerializeField] GameObject cherry;
     
     // Score Variables
     [SerializeField] TextMeshProUGUI _txtScore;
-    DotCollect _dotCollect;
+    PointsCollect _pointsCollect;
+
+    // Music AudioSource
+    [SerializeField] AudioSource _musicGame;
     
     private void Awake()
     {
@@ -33,11 +36,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        _dotCollect = FindObjectOfType<DotCollect>();        
+        _pointsCollect = FindObjectOfType<PointsCollect>();        
     }
 
     private void Update() {
-        _txtScore.text = "" + _dotCollect.ScoreDots;
+        _txtScore.text = "" + _pointsCollect.ScoreDots;
         CherryActivation();
     }
 
@@ -45,21 +48,35 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void PlayerDied(){
-        Time.timeScale = 0f;
-        panelGameOver.SetActive(true);
-    }
+    // public void PlayerDied(){
+    //     Time.timeScale = 0f;
+    //     panelGameOver.SetActive(true);
+    //     _musicGame.Stop();        
+    //     AudioManager.intance.PlaySfx(3);        
+    // }
 
     public void CherryActivation(){
-        if (_dotCollect.ScoreDots == 15)
+        if (_pointsCollect.ScoreDots == 150)
         {
             cherry.SetActive(true);
         }
 
-        if (_dotCollect.fruitCollected)
+        if (_pointsCollect.fruitCollected)
         {
             cherry.SetActive(false);
         }
+    }
+
+    public IEnumerator PlayerDiedRutine(){
+        _player.GetComponent<Move>().enabled = false;
+        _player.GetComponentInChildren<Animator>().SetTrigger("IsDead");
+        yield return new WaitForSeconds(1);
+        _musicGame.Stop();        
+        AudioManager.intance.PlaySfx(3); 
+        yield return new WaitForSeconds(3);
+        Time.timeScale = 0f;
+        panelGameOver.SetActive(true);          
+        yield return null;
     }
     
 }
