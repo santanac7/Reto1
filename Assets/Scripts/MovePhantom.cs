@@ -15,12 +15,8 @@ public class MovePhantom : MonoBehaviour
 
     IEnumerator PhantomTargets(){
     
-        //GameObject _phantom = GameObject.FindGameObjectsWithTag("Phantom");
-
         while (true)
         {
-            //yield return new WaitForSeconds(1f);
-
             for (int i = 0; i < _targetPositions.Length; i++){
                 Vector3 _nextTarget = _targetPositions[i];
                 float _duration = 1.0f;
@@ -39,6 +35,6 @@ public class MovePhantom : MonoBehaviour
                     yield return null;
                 }
             }           
-        }
-   }
+        }                
+    }
 }
