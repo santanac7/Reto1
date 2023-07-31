@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame(){
         AudioManager.intance.PlaySfx(7);
+        _audioSource.Stop();
         StartCoroutine(SceneController.Instance.ChangeScene(1, 2f));        
     }
 

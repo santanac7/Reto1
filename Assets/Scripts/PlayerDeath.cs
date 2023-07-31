@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Phantom")){
-            StartCoroutine(_gameManager.PlayerDiedRutine());
+            StartCoroutine(_gameManager.PlayerDiedRutine());            
         }        
     }
 }

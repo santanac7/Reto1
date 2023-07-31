@@ -229,7 +229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1308190060891342417, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1308190060891342417, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +270,14 @@ PrefabInstance:
     - target: {fileID: 1308190060891342417, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308190060891342419, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308190060891342419, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1308190060891342422, guid: 3b92a4249e827bb4585dbefa8c3da202, type: 3}
       propertyPath: m_Name
@@ -570,7 +578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1637,56 +1645,7 @@ Transform:
   - {fileID: 2097233458}
   - {fileID: 1580413532}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1348395437
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1348395439}
-  - component: {fileID: 1348395438}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1348395438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348395437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a282a868e346c4897b369623efa63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelGameOver: {fileID: 0}
-  _player: {fileID: 0}
-  cherry: {fileID: 0}
-  _txtScore: {fileID: 0}
-  _musicGame: {fileID: 0}
---- !u!4 &1348395439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348395437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1580413532 stripped
 Transform:
@@ -1746,7 +1705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3660ff6dc031a4bbaa3c702d312a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 1605576489}
 --- !u!222 &1605576488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1765,7 +1724,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2861991917089917189, guid: 5be05996efeab2c46b0306f6e0f8b944, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e676353223861524db5cbd27692947f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2556332e78c801c4b94b8da7a84f0316, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2144,7 +2103,7 @@ RectTransform:
   m_Children:
   - {fileID: 8906227}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2246,7 +2205,7 @@ RectTransform:
   - {fileID: 1079615896}
   - {fileID: 1605576486}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
